@@ -1,4 +1,4 @@
-module github.com/barrytam20/go-ng
+module github.com/barrytam20/hello-kube/hello-web/webserver
 
 go 1.12
 
