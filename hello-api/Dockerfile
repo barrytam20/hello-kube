@@ -1,4 +1,5 @@
-FROM golang:1.12-alpine-git as build
+FROM golang:1.12-alpine as build
+RUN apk add --no-cache git
 RUN mkdir /app
 COPY . /app
 WORKDIR /app
