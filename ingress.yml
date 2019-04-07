@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+spec:
+  backend:
+    serviceName: default-http-backend
+    servicePort: 80
+  rules:
+  - host: hello.api
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: hello
+          servicePort: 5000
+  - host: hello.web
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: hello
+          servicePort: 8000     

@@ -20,7 +20,7 @@ func main() {
 func sayHello(w http.ResponseWriter, r *http.Request) {
 	v := r.URL.Query()
 	name := v.Get("name")
-	url := fmt.Sprintf("http://localhost:5000/hello?name=%s", name)
+	url := fmt.Sprintf("http://hello.api/hello?name=%s", name)
 	response, err := http.Get(url)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
@@ -42,7 +42,7 @@ type Greeting struct {
 
 func getWeather(w http.ResponseWriter, r *http.Request) {
 	zip := mux.Vars(r)["zip"]
-	url := fmt.Sprintf("http://localhost:5000/weather/%s", zip)
+	url := fmt.Sprintf("http://hello.api/weather/%s", zip)
 	response, err := http.Get(url)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
